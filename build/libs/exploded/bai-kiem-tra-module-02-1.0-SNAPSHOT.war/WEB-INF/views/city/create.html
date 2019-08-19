@@ -17,6 +17,7 @@
             <tr>
                 <th>Tên:</th>
                 <td><input type="text" th:field="*{name}"></td>
+                <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
             </tr>
             <tr>
                 <th>Quốc gia:</th>
@@ -25,22 +26,27 @@
                         <option th:each="cnt: ${countries}" th:value="${cnt.id}" th:text="${cnt.name}"></option>
                     </select>
                 </td>
+                <td th:if="${#fields.hasErrors('country')}" th:errors="*{country}">country Error</td>
             </tr>
             <tr>
                 <th>Diện tích:</th>
                 <td><input type="text" th:field="*{acreage}"></td>
+                <td th:if="${#fields.hasErrors('acreage')}" th:errors="*{acreage}">acreage Error</td>
             </tr>
             <tr>
                 <th>Dân số:</th>
                 <td><input type="text" th:field="*{population}"></td>
+                <td th:if="${#fields.hasErrors('population')}" th:errors="*{population}">acreage Error</td>
             </tr>
             <tr>
                 <th>GDP:</th>
                 <td><input type="text" th:field="*{GDP}"></td>
+                <td th:if="${#fields.hasErrors('GDP')}" th:errors="*{GDP}">GDP Error</td>
             </tr>
             <tr>
                 <th>Giới thiệu:</th>
                 <td><input type="text" th:field="*{description}"></td>
+                <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}">description Error</td>
             </tr>
             <tr>
                 <th></th>
