@@ -4,7 +4,6 @@ import com.codegym.model.Country;
 import com.codegym.repository.CountryRepository;
 import com.codegym.service.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
 
 public class CountryServiceImpl implements CountryService {
 
@@ -12,8 +11,8 @@ public class CountryServiceImpl implements CountryService {
     private CountryRepository countryRepository;
 
     @Override
-    public Iterable<Country> findAll(Pageable pageable) {
-        return countryRepository.findAll(pageable);
+    public Iterable<Country> findAll() {
+        return countryRepository.findAll();
     }
 
     @Override

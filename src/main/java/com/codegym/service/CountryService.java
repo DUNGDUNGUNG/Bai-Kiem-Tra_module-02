@@ -1,10 +1,9 @@
 package com.codegym.service;
 
 import com.codegym.model.Country;
-import org.springframework.data.domain.Pageable;
 
 public interface CountryService {
-    Iterable<Country> findAll(Pageable pageable);
+    Iterable<Country> findAll();
 
     void save(Country country);
 
