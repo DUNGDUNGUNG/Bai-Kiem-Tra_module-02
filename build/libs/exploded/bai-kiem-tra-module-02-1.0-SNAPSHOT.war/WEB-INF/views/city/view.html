@@ -10,7 +10,7 @@
     <a href="/cities">Xem danh sách thành phố</a>
 </p>
 <div>
-    <table>
+    <table th:cellpadding="10px">
         <tr>
             <th>Tên:</th>
             <td th:text="${city.name}"></td>
@@ -38,7 +38,7 @@
         <tr>
             <th></th>
             <td>
-                <a th:href="@{/edit-city/__${city.id}__}">Chỉnh sửa</a>
+                <a th:href="@{/edit-city/__${city.id}__}">Chỉnh sửa</a> |
                 <a th:href="@{/delete-city/__${city.id}__}">Xóa</a>
             </td>
         </tr>

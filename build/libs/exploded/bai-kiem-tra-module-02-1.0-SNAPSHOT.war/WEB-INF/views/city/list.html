@@ -15,7 +15,7 @@
     </th:block>
 </h4>
 <div>
-    <table border="1">
+    <table th:cellpadding="10px" th:border="1px">
         <tr>
             <th>Tên</th>
             <th>Quốc gia</th>
@@ -33,7 +33,7 @@
             <td th:text="${city.GDP}"></td>
             <td th:text="${city.description}"></td>
             <td>
-                <a th:href="@{/edit-city/__${city.id}__}">Chỉnh sửa</a>
+                <a th:href="@{/edit-city/__${city.id}__}">Chỉnh sửa</a> |
                 <a th:href="@{/delete-city/__${city.id}__}">Xóa</a>
             </td>
         </tr>

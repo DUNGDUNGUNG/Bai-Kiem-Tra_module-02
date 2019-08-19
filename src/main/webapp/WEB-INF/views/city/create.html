@@ -13,7 +13,7 @@
 </h4>
 <div>
     <form th:action="@{/save-city}" th:object="${city}" method="post">
-        <table>
+        <table th:cellpadding="10px">
             <tr>
                 <th>Tên:</th>
                 <td><input type="text" th:field="*{name}"></td>
@@ -51,7 +51,7 @@
             <tr>
                 <th></th>
                 <td>
-                    <input type="submit" value="Nhận thành phố">
+                    <input type="submit" value="Nhận thành phố"> |
                     <a href="/cities">Thoát</a>
                 </td>
             </tr>

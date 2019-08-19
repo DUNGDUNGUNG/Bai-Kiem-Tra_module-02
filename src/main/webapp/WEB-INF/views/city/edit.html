@@ -9,7 +9,7 @@
 <div>
     <form th:action="@{/edit-city}" th:object="${city}" method="post">
         <input type="hidden" th:field="*{id}">
-        <table>
+        <table th:cellpadding="10px">
             <tr>
                 <th>Tên:</th>
                 <td><input type="text" th:field="*{name}"></td>
@@ -51,7 +51,7 @@
             <tr>
                 <th></th>
                 <td>
-                    <input type="submit" value="Cập nhật">
+                    <input type="submit" value="Cập nhật"> |
                     <a href="/cities">Thoát</a>
                 </td>
             </tr>

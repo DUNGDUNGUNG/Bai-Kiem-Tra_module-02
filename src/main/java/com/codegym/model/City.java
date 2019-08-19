@@ -1,7 +1,5 @@
 package com.codegym.model;
 
-import com.sun.istack.internal.NotNull;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
