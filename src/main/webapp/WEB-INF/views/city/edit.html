@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chỉnh sửa thành phố</title>
+</head>
+<body>
+<h1>Chỉnh sửa thành phố</h1>
+<div>
+    <form th:action="@{/edit-city}" th:object="${city}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <table>
+            <tr>
+                <th>Tên:</th>
+                <td><input type="text" th:field="*{name}"></td>
+                <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+            </tr>
+            <tr>
+                <th>Quốc gia:</th>
+                <td><span th:if="${city.country!= null}">
+                    <select name="country">
+                        <option th:each="cnt: ${countries}"
+                                th:value="${cnt.id}"
+                                th:text="${cnt.name}"
+                                th:selected="(${cnt.id} == *{country.id})"></option>
+                    </select>
+                </span>
+                </td>
+                <td th:if="${#fields.hasErrors('country')}" th:errors="*{country}">country Error</td>
+            </tr>
+            <tr>
+                <th>Diện tích:</th>
+                <td th:if="${#fields.hasErrors('acreage')}" th:errors="*{acreage}">acreage Error</td>
+                <td><input type="text" th:field="*{acreage}"></td>
+            </tr>
+            <tr>
+                <th>Dân số:</th>
+                <td><input type="text" th:field="*{population}"></td>
+                <td th:if="${#fields.hasErrors('population')}" th:errors="*{population}">
+            </tr>
+            <tr>
+                <th>GDP:</th>
+                <td><input type="text" th:field="*{GDP}"></td>
+                <td th:if="${#fields.hasErrors('GDP')}" th:errors="*{GDP}">GDP Error</td>
+            </tr>
+            <tr>
+                <th>Giới thiệu:</th>
+                <td><input type="text" th:field="*{description}"></td>
+                <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}">description Error</td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value="Cập nhật">
+                    <a href="/cities">Thoát</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
