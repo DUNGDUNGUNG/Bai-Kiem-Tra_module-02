@@ -39,6 +39,11 @@ public class CityController {
         return modelAndView;
     }
 
+    @GetMapping("/")
+    public String home(){
+        return "home";
+    }
+
     @GetMapping("/create-city")
     public ModelAndView showCreateForm() {
         ModelAndView modelAndView = new ModelAndView("city/create", "city", new City());

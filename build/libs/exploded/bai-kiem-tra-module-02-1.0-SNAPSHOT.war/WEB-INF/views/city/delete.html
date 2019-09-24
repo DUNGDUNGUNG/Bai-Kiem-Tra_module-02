@@ -11,9 +11,9 @@
         <input type="hidden" th:field="*{city.id}">
         <h3>Bạn có chắc chắn muốn xóa thành phố : <span th:text="${city.getName()}"></span> ?</h3>
 
-        <p th:align="center">
+        <p>
             <input type="submit" value="Xóa">
-            <a href="/cities">Thoát</a>
+            <a href="/city-manager/cities">Thoát</a>
         </p>
     </form>
 </div>
